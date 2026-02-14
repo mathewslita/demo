@@ -7,25 +7,19 @@ export default {
     theme: {
         extend: {
             colors: {
+                primary: '#E07A5F',   // Terra Cotta
+                secondary: '#F4F1DE', // Cream/Eggshell
+                accent: '#8C1C13',    // Burnt Red
+                neutral: '#3D405B',   // Warm Dark Blue
                 slate: {
-                    950: '#020617',
+                    950: '#020617', // Keeping existing slate for utility if needed
                 },
-                gold: {
-                    400: '#FACC15', // yellow-400
-                    500: '#EAB308', // yellow-500
-                    600: '#CA8A04', // yellow-600
-                },
-                flash: {
-                    red: '#EF4444',
-                    orange: '#F97316'
-                }
             },
             fontFamily: {
                 sans: ['Inter', 'Roboto', 'sans-serif'],
             },
             backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-gold': 'linear-gradient(135deg, #FACC15 0%, #EAB308 100%)',
+                'gradient-warm': 'linear-gradient(135deg, #E07A5F 0%, #8C1C13 100%)',
             },
             animation: {
                 'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',

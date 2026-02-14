@@ -4,66 +4,41 @@
 
 /* 
   DEFINICIÓN DE VARIABLES CSS
-  Aquí definimos los colores base para poder usarlos con opacidad en el resto de la app.
-  Usamos valores RGB para facilitar la manipulación de la transparencia.
 */
 :root {
-    --color-primary: 6 182 212;
-    /* Equivalente a cyan-500 en Tailwind */
-    --color-secondary: 139 92 246;
-    /* Equivalente a violet-500 en Tailwind */
+    --color-primary: 224 122 95;   /* #E07A5F */
+    --color-secondary: 244 241 222; /* #F4F1DE */
+    --color-accent: 140 28 19;     /* #8C1C13 */
+    --color-neutral: 61 64 91;     /* #3D405B */
 }
 
 /* 
   CAPA BASE
-  Estilos que afectan a las etiquetas HTML directamente.
 */
 @layer base {
     html {
-        /* Permite un desplazamiento suave al navegar entre secciones de la página */
         scroll-behavior: smooth;
     }
 
     body {
         /* 
-      Fondo muy oscuro (slate-950) para el tema "Clean Futurism".
-      Texto claro (slate-100) para buen contraste.
-      antialiased hace que las fuentes se vean más nítidas.
-    */
-        @apply bg-slate-950 text-slate-100 antialiased;
+          Fondo cálido (secondary) para la tienda de ropa.
+          Texto neutro oscuro (neutral) para buen contraste.
+        */
+        @apply bg-secondary text-neutral antialiased;
     }
 }
 
 /* 
   CAPA DE UTILIDADES (UTILITIES)
-  Clases personalizadas complejas creadas combinando utilidades de Tailwind.
-  Esto mantiene el HTML más limpio al reutilizar estos estilos "compuestos".
 */
 @layer utilities {
 
-    /* Efecto de vidrio básico */
-    .glass {
-        @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    .card-base {
+        @apply bg-white shadow-lg rounded-lg border border-neutral/10;
     }
 
-    /* 
-    Efecto de tarjeta de vidrio (Glassmorphism):
-    - Fondo semitransparente oscuro (bg-slate-900/40)
-    - Desenfoque de fondo (backdrop-blur-md) para el efecto "frosted glass"
-    - Borde sutil para definir los límites
-    - Sombra profunda para dar elevación y jerarquía
-  */
-    .glass-card {
-        @apply bg-slate-900/40 backdrop-blur-md border border-white/5 shadow-2xl;
-    }
-
-    /* Texto con gradiente de color (Cian a Violeta) */
     .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-violet-400;
-    }
-
-    /* Texto con gradiente sutil (Blanco a Gris Claro) para títulos secundarios */
-    .text-gradient-subtle {
-        @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70;
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
     }
 }
