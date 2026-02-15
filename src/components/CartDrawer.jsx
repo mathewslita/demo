@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { X, Trash2, MessageCircle } from 'lucide-react';
 
-export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart }) {
+export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart, updateQuantity }) {
     const total = useMemo(() => {
-        return cartItems.reduce((acc, item) => acc + item.price, 0);
+        return cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
     }, [cartItems]);
 
     const whatsappLink = useMemo(() => {
@@ -14,10 +14,11 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart 
 
         let message = "Hola! Quisiera cotizar los siguientes productos corporativos:\n\n";
         cartItems.forEach(item => {
-            message += `- ${item.name} (${item.selectedSize || 'Estándar'}): $${item.price}\n`;
+            const sizeText = item.selectedSize && item.selectedSize !== 'N/A' ? `(${item.selectedSize})` : '';
+            message += `- ${item.quantity}x ${item.name} ${sizeText}: $${(item.price * item.quantity).toFixed(2)}\n`;
         });
         message += `\nTotal Estimado: $${total.toFixed(2)}`;
-        message += `\n\nQuedo atento a su respuesta para confirmar tallas y detalles del logo.`;
+        message += `\n\nQuedo atento a su respuesta para confirmar detalles del logo.`;
 
         return `https://wa.me/${targetNumber}?text=${encodeURIComponent(message)}`;
     }, [cartItems, total]);
@@ -52,8 +53,8 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart 
                             </button>
                         </div>
                     ) : (
-                        cartItems.map((item, index) => (
-                            <div key={`${item.id}-${index}`} className="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-neutral/5 hover:shadow-md transition-shadow">
+                        cartItems.map((item) => (
+                            <div key={`${item.id}-${item.selectedSize}`} className="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-neutral/5 hover:shadow-md transition-shadow">
                                 <img
                                     src={item.image}
                                     alt={item.name}
@@ -65,16 +66,31 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart 
                                         <p className="text-xs text-neutral/60 mt-1 uppercase tracking-wider">Talla: {item.selectedSize || 'N/A'}</p>
                                     </div>
                                     <div className="flex items-center justify-between mt-2">
-                                        <span className="font-bold text-primary">${item.price}</span>
-                                        <button
-                                            onClick={() => removeFromCart(index)}
-                                            className="text-red-400 hover:text-red-600 transition-colors p-1 hover:bg-red-50 rounded-full"
-                                            title="Eliminar"
-                                        >
-                                            <Trash2 size={16} />
-                                        </button>
+                                        <div className="flex items-center border border-neutral/20 rounded-lg">
+                                            <button
+                                                onClick={() => updateQuantity(item.id, item.selectedSize, -1)}
+                                                className="px-2 py-1 hover:bg-neutral/10 text-neutral transition-colors"
+                                            >
+                                                -
+                                            </button>
+                                            <span className="px-2 text-sm font-bold">{item.quantity}</span>
+                                            <button
+                                                onClick={() => updateQuantity(item.id, item.selectedSize, 1)}
+                                                className="px-2 py-1 hover:bg-neutral/10 text-neutral transition-colors"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                        <span className="font-bold text-primary">${(item.price * item.quantity).toFixed(2)}</span>
                                     </div>
                                 </div>
+                                <button
+                                    onClick={() => removeFromCart(item.id, item.selectedSize)}
+                                    className="text-red-400 hover:text-red-600 transition-colors p-1 self-start -mt-1 -mr-1"
+                                    title="Eliminar"
+                                >
+                                    <Trash2 size={16} />
+                                </button>
                             </div>
                         ))
                     )}

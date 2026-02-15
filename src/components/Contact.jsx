@@ -12,75 +12,52 @@ export default function Contact() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto">
 
                     {/* Contact Info */}
-                    <div className="space-y-6">
-                        <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral/5">
-                            <div className="flex items-start gap-4">
-                                <div className="p-3 bg-primary/10 text-primary rounded-lg">
-                                    <MapPin size={24} />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-neutral text-lg">Ubicación</h3>
-                                    <p className="text-neutral/60 mt-1">Av. Amazonas y Naciones Unidas<br />Quito, Ecuador</p>
-                                </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+                        <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral/5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+                            <div className="p-4 bg-primary/10 text-primary rounded-full mb-4">
+                                <MapPin size={32} />
                             </div>
+                            <h3 className="font-bold text-neutral text-lg mb-2">Ubicación</h3>
+                            <p className="text-neutral/60">Av. Amazonas y Naciones Unidas<br />Quito, Ecuador</p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral/5">
-                            <div className="flex items-start gap-4">
-                                <div className="p-3 bg-primary/10 text-primary rounded-lg">
-                                    <Phone size={24} />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-neutral text-lg">Teléfono</h3>
-                                    <a href="https://wa.me/593991234567" className="text-neutral/60 mt-1 hover:text-primary transition-colors">
-                                        +593 99 123 4567
-                                    </a>
-                                    <p className="text-xs text-neutral/40">(Solo WhatsApp)</p>
-                                </div>
+                        <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral/5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+                            <div className="p-4 bg-primary/10 text-primary rounded-full mb-4">
+                                <Phone size={32} />
                             </div>
+                            <h3 className="font-bold text-neutral text-lg mb-2">Teléfono</h3>
+                            <a href="https://wa.me/593991234567" className="text-neutral/60 hover:text-primary transition-colors font-medium">
+                                +593 99 123 4567
+                            </a>
+                            <p className="text-xs text-neutral/40 mt-1">(WhatsApp)</p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral/5">
-                            <div className="flex items-start gap-4">
-                                <div className="p-3 bg-primary/10 text-primary rounded-lg">
-                                    <Mail size={24} />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-neutral text-lg">Email</h3>
-                                    <p className="text-neutral/60 mt-1">info@modacalida.demo</p>
-                                </div>
+                        <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral/5 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+                            <div className="p-4 bg-primary/10 text-primary rounded-full mb-4">
+                                <Mail size={32} />
                             </div>
+                            <h3 className="font-bold text-neutral text-lg mb-2">Email</h3>
+                            <a href="mailto:info@f-irst.com" className="text-neutral/60 hover:text-primary transition-colors">
+                                info@f-irst.com
+                            </a>
                         </div>
                     </div>
 
-                    {/* Contact Form */}
-                    <div className="lg:col-span-2 bg-white p-8 rounded-2xl shadow-lg border border-neutral/5">
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-sm font-medium text-neutral mb-2">Nombre</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-secondary/30 border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all" placeholder="Tu nombre" />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-neutral mb-2">Email</label>
-                                    <input type="email" className="w-full px-4 py-3 rounded-lg bg-secondary/30 border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all" placeholder="tucorreo@ejemplo.com" />
-                                </div>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-neutral mb-2">Asunto</label>
-                                <input type="text" className="w-full px-4 py-3 rounded-lg bg-secondary/30 border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all" placeholder="¿En qué podemos ayudarte?" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-neutral mb-2">Mensaje</label>
-                                <textarea rows="4" className="w-full px-4 py-3 rounded-lg bg-secondary/30 border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all" placeholder="Escribe tu mensaje aquí..."></textarea>
-                            </div>
-                            <button className="w-full bg-neutral text-white font-bold py-4 rounded-lg hover:bg-primary transition-colors shadow-lg">
-                                Enviar Mensaje
-                            </button>
-                        </form>
+                    <div className="mt-12 p-8 bg-white rounded-2xl shadow-sm border border-neutral/5 text-center max-w-2xl">
+                        <h3 className="font-bold text-xl text-neutral mb-4">¿Listo para renovar la imagen de tu empresa?</h3>
+                        <p className="text-neutral/70 mb-6">
+                            Escríbenos directamente a WhatsApp para una atención personalizada y cotizaciones inmediatas.
+                        </p>
+                        <a
+                            href="https://wa.me/593991234567"
+                            className="inline-flex items-center gap-2 bg-green-600 text-white font-bold py-3 px-8 rounded-full hover:bg-green-700 transition-colors shadow-lg shadow-green-600/20"
+                        >
+                            <Phone size={20} />
+                            Chat en WhatsApp
+                        </a>
                     </div>
 
                 </div>

@@ -16,10 +16,8 @@ export default function Header({ cartCount, onCartClick, onNavigate }) {
 
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center cursor-pointer group" onClick={() => onNavigate('hero')}>
-                        <h1 className="text-2xl font-serif font-bold text-accent tracking-tighter group-hover:opacity-80 transition-opacity">
-                            MODA<span className="text-neutral">CÁLIDA</span>
-                            <span className="hidden lg:inline-block ml-2 text-xs font-sans font-normal text-neutral/50 tracking-normal uppercase">Corporativo</span>
-                        </h1>
+                        <img src="/logo.png" alt="F-IRST Logo" className="h-28 w-auto object-contain transition-transform group-hover:scale-105" />
+                        {/* Text removed to avoid duplication with logo */}
                     </div>
 
                     {/* Desktop Navigation */}

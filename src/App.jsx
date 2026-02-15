@@ -6,7 +6,7 @@ import CartDrawer from './components/CartDrawer';
 import ProductModal from './components/ProductModal';
 import CustomService from './components/CustomService';
 import Contact from './components/Contact';
-import EmbroideryShowcase from './components/EmbroideryShowcase';
+import ServicesShowcase from './components/ServicesShowcase';
 import { products as initialProducts } from './data/products';
 
 function App() {
@@ -24,15 +24,33 @@ function App() {
         : initialProducts.filter(p => p.category === selectedCategory);
 
     const addToCart = (product) => {
-        setCart([...cart, product]);
+        setCart(prevCart => {
+            const existingItem = prevCart.find(item => item.id === product.id && item.selectedSize === product.selectedSize);
+            if (existingItem) {
+                return prevCart.map(item =>
+                    item.id === product.id && item.selectedSize === product.selectedSize
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
+                );
+            }
+            return [...prevCart, { ...product, quantity: 1 }];
+        });
         if (selectedProduct) setSelectedProduct(null);
         setIsCartOpen(true);
     };
 
-    const removeFromCart = (index) => {
-        const newCart = [...cart];
-        newCart.splice(index, 1);
-        setCart(newCart);
+    const removeFromCart = (productId, size) => {
+        setCart(prevCart => prevCart.filter(item => !(item.id === productId && item.selectedSize === size)));
+    };
+
+    const updateQuantity = (productId, size, delta) => {
+        setCart(prevCart => prevCart.map(item => {
+            if (item.id === productId && item.selectedSize === size) {
+                const newQuantity = Math.max(1, item.quantity + delta);
+                return { ...item, quantity: newQuantity };
+            }
+            return item;
+        }));
     };
 
     const handleNavigate = (sectionId) => {
@@ -51,7 +69,7 @@ function App() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-neutral selection:bg-primary/30">
             <Header
-                cartCount={cart.length}
+                cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)}
                 onCartClick={() => setIsCartOpen(true)}
                 onNavigate={handleNavigate}
             />
@@ -62,6 +80,7 @@ function App() {
                 onClose={() => setIsCartOpen(false)}
                 cartItems={cart}
                 removeFromCart={removeFromCart}
+                updateQuantity={updateQuantity}
             />
 
             {/* Product Modal */}
@@ -75,7 +94,7 @@ function App() {
             {/* Hero Section */}
             <section id="hero" className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-[75vh]">
                 <div className="absolute top-0 w-full h-full bg-center bg-cover" style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop')" // Corporate meeting / branding background
+                    backgroundImage: "url('/portada.jpg')" // Local hero image provided by user
                 }}>
                     <span id="blackOverlay" className="w-full h-full absolute opacity-60 bg-neutral mix-blend-multiply"></span>
                 </div>
@@ -135,8 +154,8 @@ function App() {
                     addToCart={addToCart}
                 />
 
-                {/* Embroidery Showcase (Home & Arts) */}
-                <EmbroideryShowcase onNavigate={handleNavigate} />
+                {/* Services Showcase (Replaces Embroidery) */}
+                <ServicesShowcase addToCart={addToCart} />
 
                 {/* Contact Section */}
                 <Contact />
@@ -146,9 +165,9 @@ function App() {
             <footer className="bg-neutral text-secondary py-16 border-t border-white/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
                     <div className="col-span-1 md:col-span-2">
-                        <h3 className="text-2xl font-bold mb-6 font-serif tracking-tighter">MODA<span className="text-primary">CÁLIDA</span></h3>
+                        <h3 className="text-2xl font-bold mb-6 font-serif tracking-tighter">F-IRST<span className="text-primary"> CORP</span></h3>
                         <p className="text-secondary/60 max-w-sm leading-relaxed mb-6">
-                            Expertos en imagen corporativa y bordados de alta gama. Personalizamos tu mundo, desde tu empresa hasta tu hogar.
+                            Expertos en imagen corporativa y dotación industrial. Calidad que define tu marca.
                         </p>
                     </div>
 
