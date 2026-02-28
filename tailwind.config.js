@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}",
+        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
@@ -16,7 +16,8 @@ export default {
                 },
             },
             fontFamily: {
-                sans: ['Inter', 'Roboto', 'sans-serif'],
+                sans: ['var(--font-inter)', 'sans-serif'],
+                serif: ['var(--font-roboto)', 'serif'],
             },
             backgroundImage: {
                 'gradient-warm': 'linear-gradient(135deg, #E07A5F 0%, #8C1C13 100%)',

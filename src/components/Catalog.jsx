@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import ProductCard from './ProductCard';
 import CategoryFilter from './CategoryFilter';
@@ -38,3 +39,4 @@ export default function Catalog({ products, onProductClick, addToCart, selectedC
         </section>
     );
 }
+

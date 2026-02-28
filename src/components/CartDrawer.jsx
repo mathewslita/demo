@@ -1,5 +1,7 @@
+"use client";
 import React, { useMemo } from 'react';
 import { X, Trash2, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart, updateQuantity }) {
     const total = useMemo(() => {
@@ -9,7 +11,6 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
     const whatsappLink = useMemo(() => {
         if (cartItems.length === 0) return '#';
 
-        // Updated number
         const targetNumber = "593991234567";
 
         let message = "Hola! Quisiera cotizar los siguientes productos corporativos:\n\n";
@@ -27,13 +28,11 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
 
     return (
         <div className="fixed inset-0 z-50 flex justify-end">
-            {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
                 onClick={onClose}
             />
 
-            {/* Drawer */}
             <div className="relative w-full max-w-md bg-secondary h-full shadow-2xl flex flex-col transform transition-transform duration-300 animate-slide-in-right">
                 <div className="p-5 flex items-center justify-between border-b border-neutral/10 bg-white shadow-sm z-10">
                     <h2 className="text-xl font-bold text-neutral font-serif">Tu Cotización</h2>
@@ -55,10 +54,12 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
                     ) : (
                         cartItems.map((item) => (
                             <div key={`${item.id}-${item.selectedSize}`} className="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-neutral/5 hover:shadow-md transition-shadow">
-                                <img
+                                <Image
                                     src={item.image}
                                     alt={item.name}
-                                    className="w-20 h-20 object-cover rounded-lg bg-neutral/5"
+                                    width={80}
+                                    height={80}
+                                    className="object-cover rounded-lg bg-neutral/5"
                                 />
                                 <div className="flex-1 flex flex-col justify-between">
                                     <div>
@@ -124,3 +125,4 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
         </div>
     );
 }
+

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 
 export default function CategoryFilter({ categories, selectedCategory, onSelectCategory }) {
@@ -30,3 +31,4 @@ export default function CategoryFilter({ categories, selectedCategory, onSelectC
         </div>
     );
 }
+

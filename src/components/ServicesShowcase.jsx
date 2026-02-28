@@ -1,102 +1,124 @@
+"use client";
 import React from 'react';
-import { Scissors, Palette, PenTool, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Sparkles, CheckCircle2 } from 'lucide-react';
 
-export default function ServicesShowcase({ addToCart }) {
-    // Service IDs from products.js (Used here just for reference/content)
-    const services = [
+export default function ServicesShowcase() {
+    const portfolioItems = [
         {
-            id: 701,
-            title: "Bordado Computarizado",
-            description: "Personaliza tus uniformes con logotipos de alta precisión. Hilos resistentes y acabados premium.",
-            icon: <PenTool size={32} />,
-            image: "https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1000&auto=format&fit=crop", // Embroidery machine
-            price: 5.00
+            id: 1,
+            title: "Bordado Computarizado 3D",
+            description: "Hilos de alta tenacidad que no pierden color. Ideal para dar relieve y presencia a marcas corporativas.",
+            image: "/uniforme_bordado_pro.png",
+            colSpan: "md:col-span-2",
+            rowSpan: "md:row-span-2"
         },
         {
-            id: 702,
-            title: "Estampado & Serigrafía",
-            description: "Dale vida a tu marca con impresiones DTF y serigrafía de alta durabilidad y colores vibrantes.",
-            icon: <Palette size={32} />,
-            image: "https://images.unsplash.com/photo-1562184552-e0a539726da2?q=80&w=1000&auto=format&fit=crop", // Printing
-            price: 4.50
-        },
-        {
-            id: 703,
+            id: 2,
             title: "Taller de Sastrería",
-            description: "Ajuste perfecto garantizado. Servicio de bastas, entalle y composturas post-venta.",
-            icon: <Scissors size={32} />,
-            image: "https://images.unsplash.com/photo-1598380604169-c09e05f63d09?q=80&w=1000&auto=format&fit=crop", // Tailoring
-            price: 3.50
+            description: "Talle perfecto garantizado. Entalles, bastas y composturas con acabados de alta costura.",
+            image: "/sastreria_ajustes_detalle.png",
+            colSpan: "md:col-span-1",
+            rowSpan: "md:row-span-1"
+        },
+        {
+            id: 3,
+            title: "Estampado DTF Premium",
+            description: "Colores vibrantes y alta durabilidad sin límite cromático para logos modernos.",
+            image: "/uniforme_estampado_dtf.png",
+            colSpan: "md:col-span-1",
+            rowSpan: "md:row-span-1"
         }
     ];
 
-    const scrollToCatalog = () => {
-        const catalogSection = document.getElementById('catalog');
-        if (catalogSection) {
-            catalogSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+    const benefits = [
+        "Durabilidad Garantizada",
+        "Diseños a Medida",
+        "Muestras Previas",
+        "Asesoría de Imagen"
+    ];
 
     return (
-        <section id="services" className="py-24 bg-neutral-50 relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-                <div className="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
-                <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent rounded-full blur-3xl"></div>
+        <section id="services" className="py-24 bg-white relative overflow-hidden">
+            {/* Elementos decorativos de fondo */}
+            <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
+                <div className="absolute top-10 right-10 w-[500px] h-[500px] bg-accent rounded-full blur-[100px]"></div>
+                <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-primary rounded-full blur-[100px]"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-16 max-w-3xl mx-auto">
-                    <span className="text-primary font-bold tracking-widest uppercase text-sm mb-3 block">Valor Añadido</span>
-                    <h2 className="text-4xl sm:text-5xl font-serif font-bold text-neutral mb-6 leading-tight">
-                        Centro de Personalización & Acabados
-                    </h2>
-                    <p className="text-lg text-neutral/70 leading-relaxed">
-                        Tu imagen corporativa no termina en la prenda. Elevamos tu marca con bordados de alta definición,
-                        estampados duraderos y un talle perfecto para cada colaborador.
-                        <br /><span className="text-sm font-bold text-primary mt-2 block">Disponibles al seleccionar tus productos.</span>
-                    </p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+                    <div>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-bold mb-6">
+                            <Sparkles size={16} />
+                            <span>SERVICIOS DE VALOR AÑADIDO</span>
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-serif font-bold text-neutral mb-6 leading-tight">
+                            Tu marca merece el <br />
+                            <span className="text-primary">Mejor Acabado</span>
+                        </h2>
+                        <p className="text-lg text-neutral/70 leading-relaxed mb-8">
+                            Nuestra responsabilidad no termina en la entrega de la prenda.
+                            Garantizamos que tu imagen corporativa destaque a través de
+                            nuestros centros de personalización y sastrería in-house.
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            {benefits.map((benefit, idx) => (
+                                <div key={idx} className="flex items-center gap-3">
+                                    <CheckCircle2 className="text-accent" size={20} />
+                                    <span className="text-neutral font-medium">{benefit}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="relative h-[400px] lg:h-auto hidden lg:block">
+                        {/* Elemento decorativo o espacio para layout asimétrico del lado derecho si es necesario */}
+                        <div className="absolute inset-0 bg-neutral-50 rounded-3xl p-8 border border-neutral/10 flex flex-col justify-center">
+                            <h3 className="text-2xl font-bold text-neutral mb-4">El arte del detalle</h3>
+                            <p className="text-neutral/70 italic">
+                                &quot;Un uniforme bien cuidado e identificado eleva el sentido de pertenencia y la confianza de quien lo porta y de quien lo observa.&quot;
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {services.map((service) => (
-                        <div key={service.id} className="group relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-neutral/5 flex flex-col">
-                            {/* Image Header */}
-                            <div className="h-64 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-neutral/20 group-hover:bg-neutral/0 transition-colors z-10"></div>
-                                <img
-                                    src={service.image}
-                                    alt={service.title}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg text-primary">
-                                    {service.icon}
-                                </div>
-                            </div>
+                {/* Galería tipo Bento / Masonry */}
+                <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+                    {portfolioItems.map((item) => (
+                        <div
+                            key={item.id}
+                            className={`group relative rounded-3xl overflow-hidden shadow-lg ${item.colSpan} ${item.rowSpan} bg-neutral-100 flex flex-col`}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                            {/* Content */}
-                            <div className="p-8 flex-grow flex flex-col">
-                                <h3 className="text-2xl font-bold text-neutral mb-3 group-hover:text-primary transition-colors">
-                                    {service.title}
+                            <Image
+                                src={item.image}
+                                alt={item.title}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 66vw"
+                                className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            />
+
+                            <div className="relative z-20 mt-auto p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 className="text-white font-bold text-2xl mb-2 flex items-center gap-3">
+                                    {item.title}
+                                    <span className="w-8 h-[2px] bg-accent inline-block"></span>
                                 </h3>
-                                <p className="text-neutral/70 mb-6 flex-grow">
-                                    {service.description}
+                                <p className="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 line-clamp-2 md:line-clamp-none">
+                                    {item.description}
                                 </p>
-
-                                <div className="mt-auto pt-6 border-t border-neutral/10 flex items-center justify-between">
-                                    {/* Changed action to scroll to catalog instead of Add */}
-                                    <button
-                                        onClick={scrollToCatalog}
-                                        className="w-full text-center py-2 text-primary font-bold hover:bg-neutral-50 rounded-lg transition-colors border border-primary/20 hover:border-primary"
-                                    >
-                                        Ver disponibles en catálogo
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-12 text-center text-neutral/50 text-sm font-medium">
+                    Servicios disponibles al cotizar tus prendas en nuestro catálogo de productos.
                 </div>
             </div>
         </section>
     );
 }
+

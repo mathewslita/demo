@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { cn } from '../../lib/utils';
 
@@ -27,3 +28,4 @@ export const Button = ({ children, variant = 'primary', className, ...props }) =
         </button>
     );
 };
+

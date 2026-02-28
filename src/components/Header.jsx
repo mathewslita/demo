@@ -1,5 +1,7 @@
+"use client";
 import React from 'react';
 import { ShoppingBag, Search, Menu } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Header({ cartCount, onCartClick, onNavigate }) {
     return (
@@ -16,7 +18,7 @@ export default function Header({ cartCount, onCartClick, onNavigate }) {
 
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center cursor-pointer group" onClick={() => onNavigate('hero')}>
-                        <img src="/logo.png" alt="F-IRST Logo" className="h-28 w-auto object-contain transition-transform group-hover:scale-105" />
+                        <Image src="/logo.png" alt="F-IRST Logo" width={200} height={112} className="h-28 w-auto object-contain transition-transform group-hover:scale-105" priority />
                         {/* Text removed to avoid duplication with logo */}
                     </div>
 
@@ -54,3 +56,4 @@ export default function Header({ cartCount, onCartClick, onNavigate }) {
         </header>
     );
 }
+
