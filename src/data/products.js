@@ -132,6 +132,51 @@ export const products = [
         category: "Sector Industrial/Operativo",
         description: "Chaqueta azul marino (zipper fontal) con bandas naranjas y costura reforzada tipo sport."
     },
+    {
+        id: 307,
+        name: "Pantalones Térmicos Blancos",
+        price: 35.00,
+        image: "/pantalon-blanco-juntos.png",
+        images: ["/pantalon-blanco-frente.png", "/pantalon-blanco-lateral.png", "/pantalon-blanco-juntos.png"],
+        category: "Sector Industrial/Operativo",
+        description: "Pantalones térmicos acolchados en color blanco para trabajo en bajas temperaturas o cuartos fríos."
+    },
+    {
+        id: 308,
+        name: "Pantalón Utilitario Negro",
+        price: 38.00,
+        image: "/pantalon-negro-juntos.png",
+        images: ["/pantalon-negro-frente.png", "/pantalon-negro-espalda.png", "/pantalon-negro-juntos.png"],
+        category: "Sector Industrial/Operativo",
+        description: "Pantalones negros de trabajo industrial con múltiples bolsillos y costuras reforzadas para mayor durabilidad."
+    },
+    {
+        id: 309,
+        name: "Overol Industrial ISU",
+        price: 65.00,
+        image: "/overol-isu-juntos.png",
+        images: ["/overol-isu-frente.png", "/overol-isu-espalda.png", "/overol-isu-juntos.png"],
+        category: "Sector Industrial/Operativo",
+        description: "Overol completo azul marino corporativo (ISU) con cintas reflectivas y bandera de Ecuador. Alta resistencia."
+    },
+    {
+        id: 310,
+        name: "Overol Azul Reflectivo",
+        price: 60.00,
+        image: "/overol-azul-juntos.png",
+        images: ["/overol-azul-frente.png", "/overol-azul-espalda.png", "/overol-azul-juntos.png"],
+        category: "Sector Industrial/Operativo",
+        description: "Overol industrial clásico en color azul marino con cintas reflectivas de alta visibilidad."
+    },
+    {
+        id: 311,
+        name: "Uniforme Industrial Alulema",
+        price: 55.00,
+        image: "/uniforme-alulema-juntos.png",
+        images: ["/uniforme-alulema-frente.png", "/uniforme-alulema-juntos.png"],
+        category: "Sector Industrial/Operativo",
+        description: "Conjunto de trabajo industrial tipo jean (camisa y pantalón) de alta resistencia para trabajo pesado."
+    },
 
     // --- SECTOR CORPORATIVO ---
     {
@@ -197,6 +242,24 @@ export const products = [
         category: "Sector Salud (Uniformes Médicos)",
         description: "Gorro sanitario ajustable, tela antibacterial respirable."
     },
+    {
+        id: 204,
+        name: "Conjunto Enfermera/Dentista Blanco",
+        price: 48.00,
+        image: "/conjunto-enfermera-blanco.png",
+        images: ["/conjunto-enfermera-blanco.png"],
+        category: "Sector Salud (Uniformes Médicos)",
+        description: "Conjunto médico blanco con detalles azules. Especial para dentistas y enfermeras. Diseño moderno con cuello en V."
+    },
+    {
+        id: 205,
+        name: "Conjunto Enfermera/Dentista Azul",
+        price: 48.00,
+        image: "/conjunto-enfermera-azul.png",
+        images: ["/conjunto-enfermera-azul.png"],
+        category: "Sector Salud (Uniformes Médicos)",
+        description: "Conjunto médico azul con detalles celestes. Especial para dentistas y enfermeras. Tela antifluidos y cómoda."
+    },
 
     // --- SECTOR ESCOLAR ---
     {
@@ -206,14 +269,6 @@ export const products = [
         image: "/uniforme-escolar.png",
         category: "Sector Escolar",
         description: "Conjunto de diario con materiales resistentes (poliéster/algodón). Mantiene el color tras múltiples lavadas."
-    },
-    {
-        id: 402,
-        name: "Falda Escolar Plisada",
-        price: 25.00,
-        image: "/falda-escolar.png",
-        category: "Sector Escolar",
-        description: "Falda clásica a cuadros o color entero. Plisado permanente y cintura ajustable."
     },
     {
         id: 404,
@@ -259,6 +314,15 @@ export const products = [
         images: ["/parkanegradesmontable.png", "/parka-negra-g.png"],
         category: "Logística & Básicos",
         description: "Parka desmontable con bordado posterior. Resistente al agua y viento."
+    },
+    {
+        id: 312,
+        name: "Uniforme Transporte QGC",
+        price: 58.00,
+        image: "/uniforme-qgc-juntos.png",
+        images: ["/uniforme-qgc-espalda.png", "/uniforme-qgc-juntos.png"],
+        category: "Logística & Básicos",
+        description: "Conjunto de trabajo para el sector transporte y logística con estampados corporativos de alta visibilidad."
     },
 
     // --- SERVICIOS DE PERSONALIZACIÓN ---
