@@ -35,3 +35,16 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS Cache
+Thumbs.db
+Desktop.ini
+
+# Turbo
+.turbo/
