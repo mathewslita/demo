@@ -43,7 +43,7 @@ export const products = [
         name: "Polo Manga Larga Alta Visibilidad",
         price: 22.00,
         image: "/8.jpg",
-        images: ["/8.jpg", "/polo-azul-cintas-espalda.png"],
+        images: ["/8.jpg"],
         category: "Sector Industrial/Operativo",
         description: "Polo de seguridad con mangas largas y cintas reflectivas segmentadas. Protección UV."
     },
@@ -101,7 +101,7 @@ export const products = [
         name: "Chaqueta Desmontable Verde",
         price: 58.00,
         image: "/casaca-verde-negro-mangas-desmontables-2.png",
-        images: ["/casaca-negra-verde.png", "/casaca-verde-negro-mangas-desmontables-2.png ", "/casaca-verde-negro-mangas-desmontables-3.png", "/casaca-verde-negro-mangas-desmontables-espalda.png"],
+        images: ["/casaca-negra-verde.png", "/casaca-verde-negro-mangas-desmontables-2.png", "/casaca-verde-negro-mangas-desmontables-3.png", "/casaca-verde-negro-mangas-desmontables-espalda.png"],
         category: "Sector Industrial/Operativo",
         description: "Chaqueta 2 en 1 transformable a chaleco con mangas removibles y cintas reflectivas."
     },
@@ -134,21 +134,21 @@ export const products = [
     },
     {
         id: 307,
-        name: "Pantalones Térmicos Blancos",
+        name: "Pantalón Blanco con Elástico",
         price: 35.00,
         image: "/pantalon-blanco-juntos.png",
         images: ["/pantalon-blanco-frente.png", "/pantalon-blanco-lateral.png", "/pantalon-blanco-juntos.png"],
-        category: "Sector Industrial/Operativo",
-        description: "Pantalones térmicos acolchados en color blanco para trabajo en bajas temperaturas o cuartos fríos."
+        category: "Sector Salud (Uniformes Médicos)",
+        description: "Pantalón blanco clásico con cintura elástica. Modelo cómodo y versátil, ideal para uso médico, clínico o industria alimentaria."
     },
     {
         id: 308,
-        name: "Pantalón Utilitario Negro",
+        name: "Pantalón Industrial Reflectivo",
         price: 38.00,
-        image: "/pantalon-negro-juntos.png",
-        images: ["/pantalon-negro-frente.png", "/pantalon-negro-espalda.png", "/pantalon-negro-juntos.png"],
+        image: "/pantalon-negro-frente.png",
+        images: ["/pantalon-negro-frente.png", "/pantalon-negro-espalda.png"],
         category: "Sector Industrial/Operativo",
-        description: "Pantalones negros de trabajo industrial con múltiples bolsillos y costuras reforzadas para mayor durabilidad."
+        description: "Pantalón de trabajo industrial resistente en color oscuro. Incorpora bandas reflectivas de alta visibilidad en la parte inferior de las piernas para mayor seguridad."
     },
     {
         id: 309,
