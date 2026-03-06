@@ -9,7 +9,7 @@ export const products = [
         image: "/1.jpg",
         images: ["/1.jpg"],
         category: "Sector Industrial/Operativo",
-        description: "Chaqueta impermeable de alta visibilidad con bandas reflectantes certificadas ANSI/ISEA. Recubrimiento térmico."
+        description: "Chaqueta impermeable de alta visibilidad con bandas reflectantes certificadas ANSI/ISEA. Forro térmico."
     },
     {
         id: 2,
@@ -41,7 +41,7 @@ export const products = [
     {
         id: 8,
         name: "Polo Manga Larga Alta Visibilidad",
-        price: 22.00,
+        price: 18.00,
         image: "/8.jpg",
         images: ["/8.jpg"],
         category: "Sector Industrial/Operativo",
@@ -50,11 +50,11 @@ export const products = [
     {
         id: 302,
         name: "Traje industrial",
-        price: 55.00,
+        price: 28.00,
         image: "/conjunto-jean-industrial.png",
         images: ["/conjunto-jean-industrial.png"],
         category: "Sector Industrial/Operativo",
-        description: "Traje completo de alta resistencia. Diseñado para aislar chispas o ambientes industriales duros."
+        description: "Uniforme completo industrisal de alta resistencia. Diseñado para aislar chispas o ambientes industriales duros. Camisa Jeans 7 onzas y Pantalon Jeans 14 onzas"
     },
     {
         id: 304,
@@ -67,12 +67,12 @@ export const products = [
     },
     {
         id: 303,
-        name: "Botas Térmicas de Seguridad",
+        name: "Polainas Térmicas para cámaras de frío",
         price: 85.00,
         image: "/botas.png",
         images: ["/botas.png"],
         category: "Sector Industrial/Operativo",
-        description: "Botas industriales con forro térmico y protección para uso exigente."
+        description: "Polainas Térmicas para cámaras de frío. Comodos y abrigados."
     },
     {
         id: 10,
