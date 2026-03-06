@@ -108,13 +108,13 @@ export default function ProductModal({ product, isOpen, onClose, addToCart }) {
                         <div className="w-full max-w-md">
                             <div className="flex justify-between items-center mb-6">
                                 <h3 className="text-xl font-bold text-neutral">{currentChart.title}</h3>
-                                <button onClick={() => setShowSizeGuide(false)} className="p-2 hover:bg-neutral/10 rounded-full">
+                                <button onClick={() => setShowSizeGuide(false)} className="p-2 hover:bg-neutral/10 rounded-full" aria-label="Cerrar guía de tallas">
                                     <X size={24} />
                                 </button>
                             </div>
                             <div className="bg-neutral-50 rounded-xl p-4 border border-neutral/10">
                                 <table className="w-full text-sm text-left">
-                                    <thead className="uppercase text-neutral/50 font-bold border-b border-neutral/10">
+                                    <thead className="uppercase text-neutral/70 font-bold border-b border-neutral/10">
                                         <tr>
                                             {currentChart.headers.map(h => <th key={h} className="py-2 px-2">{h}</th>)}
                                         </tr>
@@ -128,7 +128,7 @@ export default function ProductModal({ product, isOpen, onClose, addToCart }) {
                                     </tbody>
                                 </table>
                             </div>
-                            <p className="text-xs text-neutral/50 mt-4 text-center">
+                            <p className="text-xs text-neutral/70 mt-4 text-center">
                                 * Medidas aproximadas. Pueden variar +/- 1cm según producción.
                             </p>
                         </div>
@@ -139,6 +139,7 @@ export default function ProductModal({ product, isOpen, onClose, addToCart }) {
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 z-10 p-2 bg-white/80 rounded-full md:hidden"
+                    aria-label="Cerrar detalles del producto"
                 >
                     <X size={24} />
                 </button>
@@ -192,6 +193,7 @@ export default function ProductModal({ product, isOpen, onClose, addToCart }) {
                                     key={i}
                                     onClick={() => setCurrentImageIndex(i)}
                                     className={`relative w-20 h-20 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${currentImageIndex === i ? 'border-primary shadow-md' : 'border-transparent opacity-60 hover:opacity-100'}`}
+                                    aria-label={`Seleccionar imagen ${i + 1}`}
                                 >
                                     <Image src={img} alt={`${product.name} ángulo ${i + 1}`} fill className="object-cover" />
                                 </button>
@@ -212,12 +214,13 @@ export default function ProductModal({ product, isOpen, onClose, addToCart }) {
                         <button
                             onClick={onClose}
                             className="hidden md:block p-2 hover:bg-neutral/10 rounded-full transition-colors text-neutral/50 hover:text-neutral"
+                            aria-label="Cerrar ventana"
                         >
                             <X size={24} />
                         </button>
                     </div>
 
-                    <p className="mt-6 text-neutral/70 leading-relaxed">
+                    <p className="mt-6 text-neutral/80 leading-relaxed">
                         {product.description}
                         <br className="mb-4" />
                         Confeccionado con materiales de alta calidad para asegurar durabilidad y confort. Ideal para combinar con tu estilo único.

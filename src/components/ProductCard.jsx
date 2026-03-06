@@ -20,7 +20,7 @@ export default function ProductCard({ product, addToCart }) {
             <div className="p-4">
                 <span className="text-xs font-semibold text-accent uppercase tracking-wider">{product.category}</span>
                 <h3 className="mt-1 text-lg font-medium text-neutral">{product.name}</h3>
-                <p className="mt-2 text-sm text-neutral/70 line-clamp-2">{product.description}</p>
+                <p className="mt-2 text-sm text-neutral/80 line-clamp-2">{product.description}</p>
 
                 <div className="mt-4 flex items-center justify-between">
                     <span className="text-xl font-bold text-primary">${product.price.toFixed(2)}</span>

@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { ShoppingBag, Search, Menu } from 'lucide-react';
+import { ShoppingBag, Menu } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Header({ cartCount, onCartClick, onNavigate }) {
@@ -11,7 +11,7 @@ export default function Header({ cartCount, onCartClick, onNavigate }) {
 
                     {/* Mobile Menu Button - Visual Only for now */}
                     <div className="flex items-center sm:hidden">
-                        <button className="p-2 text-neutral hover:bg-neutral/10 rounded-md">
+                        <button className="p-2 text-neutral hover:bg-neutral/10 rounded-md" aria-label="Abrir menú">
                             <Menu size={24} />
                         </button>
                     </div>
@@ -32,10 +32,6 @@ export default function Header({ cartCount, onCartClick, onNavigate }) {
 
                     {/* Icons */}
                     <div className="flex items-center space-x-4">
-                        <button className="p-2 text-neutral hover:text-primary transition-colors hidden sm:block">
-                            <Search size={20} />
-                        </button>
-
                         <div className="relative">
                             <button
                                 onClick={onCartClick}

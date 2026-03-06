@@ -36,15 +36,15 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
             <div className="relative w-full max-w-md bg-secondary h-full shadow-2xl flex flex-col transform transition-transform duration-300 animate-slide-in-right">
                 <div className="p-5 flex items-center justify-between border-b border-neutral/10 bg-white shadow-sm z-10">
                     <h2 className="text-xl font-bold text-neutral font-serif">Tu Cotización</h2>
-                    <button onClick={onClose} className="p-2 hover:bg-neutral/10 rounded-full transition-colors text-neutral/60 hover:text-neutral">
+                    <button onClick={onClose} className="p-2 hover:bg-neutral/10 rounded-full transition-colors text-neutral/60 hover:text-neutral" aria-label="Cerrar carrito">
                         <X size={24} />
                     </button>
                 </div>
 
                 <div className="flex-1 overflow-y-auto p-5 space-y-4 bg-secondary/30">
                     {cartItems.length === 0 ? (
-                        <div className="h-full flex flex-col items-center justify-center text-neutral/50 space-y-4">
-                            <MessageCircle size={48} className="opacity-20" />
+                        <div className="h-full flex flex-col items-center justify-center text-neutral/70 space-y-4">
+                            <MessageCircle size={48} className="opacity-40" />
                             <p className="text-lg font-medium">No has seleccionado productos.</p>
                             <p className="text-sm text-center max-w-xs opacity-70">Agrega prendas del catálogo para solicitar tu cotización.</p>
                             <button onClick={onClose} className="text-primary hover:underline font-bold mt-2">
@@ -64,13 +64,14 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
                                 <div className="flex-1 flex flex-col justify-between">
                                     <div>
                                         <h3 className="font-bold text-neutral text-sm">{item.name}</h3>
-                                        <p className="text-xs text-neutral/60 mt-1 uppercase tracking-wider">Talla: {item.selectedSize || 'N/A'}</p>
+                                        <p className="text-xs text-neutral/80 mt-1 uppercase tracking-wider">Talla: {item.selectedSize || 'N/A'}</p>
                                     </div>
                                     <div className="flex items-center justify-between mt-2">
                                         <div className="flex items-center border border-neutral/20 rounded-lg">
                                             <button
                                                 onClick={() => updateQuantity(item.id, item.selectedSize, -1)}
                                                 className="px-2 py-1 hover:bg-neutral/10 text-neutral transition-colors"
+                                                aria-label="Disminuir cantidad"
                                             >
                                                 -
                                             </button>
@@ -78,6 +79,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
                                             <button
                                                 onClick={() => updateQuantity(item.id, item.selectedSize, 1)}
                                                 className="px-2 py-1 hover:bg-neutral/10 text-neutral transition-colors"
+                                                aria-label="Aumentar cantidad"
                                             >
                                                 +
                                             </button>
@@ -87,8 +89,9 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
                                 </div>
                                 <button
                                     onClick={() => removeFromCart(item.id, item.selectedSize)}
-                                    className="text-red-400 hover:text-red-600 transition-colors p-1 self-start -mt-1 -mr-1"
+                                    className="text-red-600 hover:text-red-800 transition-colors p-1 self-start -mt-1 -mr-1"
                                     title="Eliminar"
+                                    aria-label={`Eliminar ${item.name}`}
                                 >
                                     <Trash2 size={16} />
                                 </button>

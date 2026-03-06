@@ -110,7 +110,7 @@ export default function Page() {
                     <span id="blackOverlay" className="w-full h-full absolute top-0 left-0 opacity-60 bg-neutral mix-blend-multiply z-10"></span>
                 </div>
 
-                <div className="container relative mx-auto px-4">
+                <div className="container relative mx-auto px-4 z-20">
                     <div className="items-center flex flex-wrap">
                         <div className="w-full lg:w-8/12 px-4 ml-auto mr-auto text-center">
                             <div className="animate-fade-in-up">
