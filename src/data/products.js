@@ -68,7 +68,7 @@ export const products = [
     {
         id: 303,
         name: "Polainas Térmicas para cámaras de frío",
-        price: 85.00,
+        price: 12.00,
         image: "/botas.png",
         images: ["/botas.png"],
         category: "Sector Industrial/Operativo",
@@ -86,7 +86,7 @@ export const products = [
     {
         id: 11,
         name: "Chaleco con capucha oculta",
-        price: 90.00,
+        price: 40.00,
         image: "/casaca-negra-cintas-amarillas.png",
         images: [
             "/casaca-negra-cintas-amarillas.png",
@@ -118,7 +118,7 @@ export const products = [
         id: 306,
         name: "Traje Cuarto Frío Premium",
         price: 115.00,
-        image: "/conjunto-cuarto-frio-2.png",
+        image: "/conjuntocuartofrio.png",
         images: ["/conjuntocuartofrio.png", "/conjunto-cuarto-frio-2.png", "/conjunto-cuarto-frio-3.png"],
         category: "Sector Industrial/Operativo",
         description: "Traje completo ultra abrigado para cámaras frigoríficas. Pantalón blanco acolchado y chaqueta azul impermeable."
@@ -171,7 +171,7 @@ export const products = [
     {
         id: 311,
         name: "Uniforme Industrial Alulema",
-        price: 55.00,
+        price: 33.00,
         image: "/uniforme-alulema-juntos.png",
         images: ["/uniforme-alulema-frente.png", "/uniforme-alulema-juntos.png"],
         category: "Sector Industrial/Operativo",
@@ -199,7 +199,7 @@ export const products = [
     {
         id: 101,
         name: "Monja Soldador",
-        price: 85.00,
+        price: 10.00,
         image: "/monja.png",
         images: ["/monja.png", "/monja2.png", "/monja3.png"],
         category: "Sector Industrial/Operativo",
@@ -208,7 +208,7 @@ export const products = [
     {
         id: 104,
         name: "Chaqueta Softshell Corporativa",
-        price: 62.00,
+        price: 39.00,
         image: "/chaqueta-softshell-uce.png",
         images: ["/chaqueta-softshell-uce.png", "/casaca-softshell-uce-2.png"],
         category: "Sector Corporativo",
@@ -309,7 +309,7 @@ export const products = [
     {
         id: 103,
         name: "Parka Acolchada de Seguridad desmontable",
-        price: 85.00,
+        price: 60.00,
         image: "/parkanegradesmontable.png",
         images: ["/parkanegradesmontable.png", "/parka-negra-g.png"],
         category: "Logística & Básicos",
